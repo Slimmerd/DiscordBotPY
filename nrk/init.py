@@ -1,7 +1,6 @@
 import logging
 import os
 import typing as t
-from pathlib import Path
 
 import dotenv
 import hikari
@@ -42,8 +41,6 @@ class Bot(lightbulb.BotApp):
     __slots__ = ("client", "stdout_channel", "lavalink")
 
     def __init__(self: _BotT) -> None:
-        self.extensions = [p.stem for p in Path("./nrk/modules/").glob("*.py")]
-
         super().__init__(
             token=os.environ['BOT_TOKEN'],
             intents=hikari.Intents.ALL,
@@ -65,7 +62,7 @@ class Bot(lightbulb.BotApp):
         )
 
     async def on_starting(self: _BotT, event: hikari.StartingEvent) -> None:
-        self.load_extensions_from("./modules/", must_exist=True)
+        self.load_extensions('modules.music')
         log.info(f"modules loaded")
 
         # cache = sake.redis.RedisCache(self, self, address="redis://127.0.0.1")

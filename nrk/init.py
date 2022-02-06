@@ -62,7 +62,7 @@ class Bot(lightbulb.BotApp):
         )
 
     async def on_starting(self: _BotT, event: hikari.StartingEvent) -> None:
-        self.load_extensions('modules.music')
+        self.load_extensions('modules.music', 'modules.meta', 'modules.mine', 'modules.misc')
         log.info(f"modules loaded")
 
         # cache = sake.redis.RedisCache(self, self, address="redis://127.0.0.1")

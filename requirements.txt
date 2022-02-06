@@ -4,3 +4,4 @@ lavasnek-rs
 uvloop
 python-dotenv
 psutil
+mcipc

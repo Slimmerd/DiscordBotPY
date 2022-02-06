@@ -3,3 +3,4 @@ hikari-lightbulb
 lavasnek-rs
 uvloop
 python-dotenv
+psutil

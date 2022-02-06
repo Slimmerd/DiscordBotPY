@@ -1,4 +1,7 @@
-from . import music_plugin, lightbulb, hikari
+import hikari
+import lightbulb
+
+from . import music_plugin
 
 
 @music_plugin.command
